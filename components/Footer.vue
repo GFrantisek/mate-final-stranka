@@ -1,6 +1,8 @@
 <template>
   <footer class="footer">
-
+    <div>
+      <img alt="pushtest" />
+    </div>
   </footer>
 </template>
 
