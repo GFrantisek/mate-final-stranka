@@ -1,36 +1,58 @@
 <template>
   <header class="header">
     <div class="header-content flex justify-between items-center p-6">
-      <img class="logo pl-24" src="~/assets/logo.png" alt="Company Logo"/>
-      <nav>
-        <ul class="flex justify-center items-center space-x-12">
-          <li><nuxt-link to="/">Home</nuxt-link></li>
-          <li><nuxt-link to="/about">About</nuxt-link></li>
-          <li><nuxt-link to="/products">Products</nuxt-link></li>
-          <li><nuxt-link to="/contact">Contact</nuxt-link></li>
+      <!-- Navigation Menu on Top Left -->
+      <nav class="flex-1 pt-1">
+        <ul class="flex space-x-8">
+          <li><nuxt-link to="/">Domov</nuxt-link></li>
+          <li><nuxt-link to="/products">Produkty</nuxt-link></li>
+          <li><nuxt-link to="/about">O nás</nuxt-link></li>
+          <li><nuxt-link to="/contact">Kontakt</nuxt-link></li>
         </ul>
       </nav>
-      <img class="basket pr-24 " src="/path-to-basket-icon.png" alt="Basket Icon">
+
+      <!-- Logo -->
+      <div class="flex-1 flex items-center justify-center">
+        <img class="logo" src="~/assets/logo1.png" alt="Company Logo" />
+      </div>
+
+      <!-- Basket and Profile Picture Top Right -->
+      <div class="icons pt-1 flex-1 flex justify-end space-x-2">
+        <img class="basket" src="~/assets/shopping-cart.png" alt="Basket Icon" />
+        <img class="user" src="~/assets/user.png" alt="User Icon" />
+      </div>
     </div>
   </header>
 </template>
 
 <script>
-export default {
-  name: "Header"
-}
+  export default {
+    name: "Header"
+  }
 </script>
 
 <style scoped>
-.header {
-  background-color: #333;
-  color: #fff;
-}
-.logo, .basket {
-  height: 30px;  /* adjust as needed */
-}
-.header-content a {
-  color: #fff;
-  text-decoration: none;
-}
+  .header {
+    background-color: #fff;
+    color: #fff;
+  }
+
+  .logo {
+    height: 100px; /* adjust as needed */
+  }
+
+  .basket,
+  .user {
+    height: 30px; /* adjust as needed */
+  }
+
+  .header-content a {
+    color: #008296;
+    text-decoration: none;
+  }
+
+
+  .icons {
+    justify-content: flex-end; /* Align icons to the right */
+  }
 </style>
