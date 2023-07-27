@@ -6,7 +6,7 @@
         <ul class="flex space-x-8">
           <li><nuxt-link to="/">Domov</nuxt-link></li>
           <li><nuxt-link to="/products">Produkty</nuxt-link></li>
-          <li><nuxt-link to="/about">O nás</nuxt-link></li>
+          <li><nuxt-link to="/about-us">O nás</nuxt-link></li>
           <li><nuxt-link to="/contact">Kontakt</nuxt-link></li>
         </ul>
       </nav>
