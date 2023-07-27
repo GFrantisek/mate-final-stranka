@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="flex justify-around items-start m-auto py-5 bg-blue-600 min-h-[80vh]">
+    <section class="flex justify-around items-start m-auto py-5 bg-white-600 min-h-[80vh]">
       <!--Product 1 div -->
       <div class="w-1/4 flex flex-col items-center justify-end">
         <div class="relative h-96 bg-white w-full" @mouseover="hover1 = true" @mouseleave="hover1 = false">
@@ -10,7 +10,7 @@
             <p class="mb-0">Description for Product 1...</p>
           </div>
         </div>
-        <div class="w-full py-2 text-center text-blue-600 bg-gray-200 rounded-lg mt-2">
+        <div class="w-full py-2 text-center prices rounded-lg mt-2">
           <h2 class="mt-0">Product 1</h2>
           <p class="mb-0">100€</p>
         </div>
@@ -25,7 +25,7 @@
             <p class="mb-0">Description for Product 2...</p>
           </div>
         </div>
-        <div class="w-full py-2 text-center text-blue-600 bg-gray-200 rounded-lg mt-2">
+        <div class="w-full py-2 text-center prices rounded-lg mt-2">
           <h2 class="mt-0">Product 2</h2>
           <p class="mb-0">200€</p>
         </div>
@@ -40,7 +40,7 @@
             <p class="mb-0">Description for Product 3...</p>
           </div>
         </div>
-        <div class="w-full py-2 text-center text-blue-600 bg-gray-200 rounded-lg mt-2">
+        <div class="w-full py-2 text-center prices rounded-lg mt-2">
           <h2 class="mt-0">Product 3</h2>
           <p class="mb-0">300€</p>
         </div>
@@ -71,6 +71,10 @@ export default {
   filter: grayscale(100%);
 }
 
+  .prices {
+    background-color: #008296;
+    color: #fff;
+  }
 .absolute {
   background-color: rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
