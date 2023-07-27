@@ -1,43 +1,48 @@
 <template>
   <div>
-    <section class="products home-background">
-      <div class="product">
-        <div class="image-container" @mouseover="hover1 = true" @mouseleave="hover1 = false">
-          <img src="~/assets/produkt_obr2.png" alt="Product 1">
-          <div class="description" v-show="hover1">
-            <h2>Product 1</h2>
-            <p>Description for Product 1...</p>
+    <section class="flex justify-around items-start m-auto py-5 bg-blue-600 min-h-[80vh]">
+      <!--Product 1 div -->
+      <div class="w-1/4 flex flex-col items-center justify-end">
+        <div class="relative h-96 bg-white w-full" @mouseover="hover1 = true" @mouseleave="hover1 = false">
+          <img :class="{'grayscale': hover1}" src="~/assets/produkt_obr2.png" class="object-cover w-full h-full rounded-lg" alt="Product 1">
+          <div class="absolute inset-0 bg-gray-500 text-white flex flex-col justify-center items-center rounded-lg transition-opacity duration-300" :class="{'opacity-0': !hover1, 'opacity-100': hover1}">
+            <h2 class="mt-0">Product 1</h2>
+            <p class="mb-0">Description for Product 1...</p>
           </div>
         </div>
-        <div class="product-info">
-          <h2>Produkt 1</h2>
-          <p>100€</p>
+        <div class="w-full py-2 text-center text-blue-600 bg-gray-200 rounded-lg mt-2">
+          <h2 class="mt-0">Product 1</h2>
+          <p class="mb-0">100€</p>
         </div>
       </div>
-      <div class="product">
-        <div class="image-container" @mouseover="hover2 = true" @mouseleave="hover2 = false">
-          <img src=~/assets/product-2.png alt="Product 2">
-          <div class="description" v-show="hover2">
-            <h2>Produkt 2</h2>
-            <p>Description for Product 2...</p>
+
+      <!--Product 2 div -->
+      <div class="w-1/4 flex flex-col items-center justify-end">
+        <div class="relative h-96 bg-white w-full" @mouseover="hover2 = true" @mouseleave="hover2 = false">
+          <img :class="{'grayscale': hover2}" src="~/assets/product-2.png" class="object-cover w-full h-full rounded-lg" alt="Product 2">
+          <div class="absolute inset-0 bg-gray-500 text-white flex flex-col justify-center items-center rounded-lg transition-opacity duration-300" :class="{'opacity-0': !hover2, 'opacity-100': hover2}">
+            <h2 class="mt-0">Product 2</h2>
+            <p class="mb-0">Description for Product 2...</p>
           </div>
         </div>
-        <div class="product-info">
-          <h2>Produkt 2</h2>
-          <p>200€</p>
+        <div class="w-full py-2 text-center text-blue-600 bg-gray-200 rounded-lg mt-2">
+          <h2 class="mt-0">Product 2</h2>
+          <p class="mb-0">200€</p>
         </div>
       </div>
-      <div class="product">
-        <div class="image-container" @mouseover="hover3 = true" @mouseleave="hover3 = false">
-          <img src=~/assets/product-3.png alt="Product 3">
-          <div class="description" v-show="hover3">
-            <h2>Product 3</h2>
-            <p>Description for Product 3...</p>
+
+      <!--Product 3 div -->
+      <div class="w-1/4 flex flex-col items-center justify-end">
+        <div class="relative h-96 bg-white w-full" @mouseover="hover3 = true" @mouseleave="hover3 = false">
+          <img :class="{'grayscale': hover3}" src="~/assets/product-3.png" class="object-cover w-full h-full rounded-lg" alt="Product 3">
+          <div class="absolute inset-0 bg-gray-500 text-white flex flex-col justify-center items-center rounded-lg transition-opacity duration-300" :class="{'opacity-0': !hover3, 'opacity-100': hover3}">
+            <h2 class="mt-0">Product 3</h2>
+            <p class="mb-0">Description for Product 3...</p>
           </div>
         </div>
-        <div class="product-info">
-          <h2>Produkt 3</h2>
-          <p>300€</p>
+        <div class="w-full py-2 text-center text-blue-600 bg-gray-200 rounded-lg mt-2">
+          <h2 class="mt-0">Product 3</h2>
+          <p class="mb-0">300€</p>
         </div>
       </div>
     </section>
@@ -62,79 +67,16 @@ export default {
 </script>
 
 <style scoped>
-.products {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 60vh;
-  margin: 0 auto;
-  padding: 20px;
+.grayscale {
+  filter: grayscale(100%);
 }
 
-  .home-background {
-    background-color: #008296;
-  }
-
-.product {
-  width: 30%;
-  position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.absolute {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
 }
 
-  .image-container {
-    object-fit: contain;
-    position: relative;
-     /* adjust as needed */
-  }
-
-.product img {
-  width: 100%;
-  height: 100%; /* adjust as needed */
-  display: block;
-  margin: auto;
-  border-radius: 10px;
-}
-
-.product-info {
-  width: 100%;
-  padding: 10px;
-  text-align: center;
-  color: #008296;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-}
-
-  .description {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(118, 189, 78,0.8);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-.image-container:hover .description {
-  opacity: 1;
-}
-
-.description h2,
-.product-info h2 {
-  margin-top: 0;
-}
-
-.description p,
-.product-info p {
-  margin-bottom: 0;
+.absolute:hover {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 </style>
